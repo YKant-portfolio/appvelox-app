@@ -1,0 +1,26 @@
+.header {
+	grid-area: header;
+	width: 1176px;
+	height: 55px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 40px;
+	background-color: var(--cyan);
+}
+
+.header h2 {
+	font-family: 'Rubik';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 28px;
+	line-height: 33px;
+	color: var(--white);
+}
+
+.header__nav {
+	width: 186px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}

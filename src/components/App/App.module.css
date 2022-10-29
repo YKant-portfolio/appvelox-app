@@ -1,0 +1,11 @@
+.app {
+	width: 1366px;
+	height: 768px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-areas:
+		"sidebar header"
+		"sidebar main";
+	grid-template-columns: 190px 1fr;
+	grid-template-rows: 55px auto;
+}

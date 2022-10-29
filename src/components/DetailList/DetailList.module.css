@@ -1,0 +1,59 @@
+.wrap {
+	display: grid;
+	grid-template-areas:
+		"all_entries calendar"
+		"detail_list calendar";
+	grid-template-columns: 505px 573px;
+	grid-template-rows: 30px auto;
+	gap: 0 40px;
+}
+
+.detail_list {
+	grid-area: detail_list;
+	display: flex;
+	flex-direction: column;
+	grid-column: 1 / 2;
+	grid-row: 2 / 3;
+	max-height: 646px;
+	margin: -10px;
+	padding: 10px;
+	overflow-y: scroll;
+}
+
+.wrap_btn {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.btn {
+	grid-area: all_entries;
+	display: block;
+	margin-right: 48px;
+	font-size: 14px;
+	line-height: 17px;
+	text-decoration-line: underline;
+	color: var(--cyan);
+	background: var(--white);
+}
+
+.show_scroll::-webkit-scrollbar {
+	width: 8px;
+}
+
+.show_scroll::-webkit-scrollbar-track {
+	background: var(--light-purple);
+	border-radius: 5px;
+}
+
+.show_scroll::-webkit-scrollbar-thumb {
+	background-color: var(--blue);
+	border-radius: 5px;
+}
+
+.hidden {
+	display: none;
+}
+
+.element::-webkit-scrollbar {
+	width: 0;
+}

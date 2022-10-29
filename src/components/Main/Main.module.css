@@ -1,0 +1,5 @@
+.main {
+	grid-area: main;
+	background-color: var(--bg-color);
+	padding: 15px 60px 10px 20px;
+}

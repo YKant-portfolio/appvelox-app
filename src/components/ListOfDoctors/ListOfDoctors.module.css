@@ -1,0 +1,25 @@
+.wrap_style {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 35px;
+}
+
+.link {
+	display: flex;
+	flex-direction: column;
+	text-decoration: underline;
+	text-align: center;
+	color: var(--cyan);
+	font-size: 14px;
+}
+
+.card {
+	display: flex;
+}
+
+span {
+	display: inline-block;
+	color: var(--black);
+	line-height: 30px;
+}
