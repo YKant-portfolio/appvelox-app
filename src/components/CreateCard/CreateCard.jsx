@@ -1,8 +1,6 @@
 import React from 'react';
 import { DoctorCard } from '../DoctorCard/DoctorCard';
 
-
-
 export const CreateCard = ({ array, flex }) => {
 
 	const cards = array.map(card => {

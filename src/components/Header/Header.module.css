@@ -9,6 +9,22 @@
 	background-color: var(--cyan);
 }
 
+.header.dark {
+	grid-area: header;
+	background-color: var(--menu-dark);
+}
+
+.header__btn {
+	background-color: var(--cyan);
+	color: var(--menu-dark);
+}
+
+.header__btn.dark {
+	background-color: var(--menu-dark);
+	color: var(--white);
+	text-align: center;
+}
+
 .header h2 {
 	font-family: 'Rubik';
 	font-style: normal;

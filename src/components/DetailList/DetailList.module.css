@@ -36,6 +36,12 @@
 	background: var(--white);
 }
 
+.btn.dark {
+	background: var(--bg-dark);
+	text-decoration-line: none;
+	color: var(--white);
+}
+
 .show_scroll::-webkit-scrollbar {
 	width: 8px;
 }
@@ -48,6 +54,14 @@
 .show_scroll::-webkit-scrollbar-thumb {
 	background-color: var(--blue);
 	border-radius: 5px;
+}
+
+.dark::-webkit-scrollbar-track {
+	background: var(--white);
+}
+
+.dark::-webkit-scrollbar-thumb {
+	background-color: var(--menu-dark);
 }
 
 .hidden {

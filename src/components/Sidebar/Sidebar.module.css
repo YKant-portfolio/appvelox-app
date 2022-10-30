@@ -7,6 +7,11 @@
 	width: 190px;
 }
 
+/*  */
+.sidebar.dark {
+	background: var(--menu-dark);
+}
+
 .logo {
 	height: 55px;
 	display: flex;
@@ -95,6 +100,10 @@
 	border-radius: 5px;
 	align-self: center;
 	cursor: pointer;
+}
+
+.nav__btn.dark {
+	background-color: var(--bg-dark);
 }
 
 .footer {

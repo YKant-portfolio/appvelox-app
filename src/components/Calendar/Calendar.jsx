@@ -2,15 +2,18 @@ import React, { useState } from 'react';
 import ReactCalendar from 'react-calendar';
 import './Calendar.css';
 import dayjs from 'dayjs';
-
 import { ReactComponent as SvgNext } from '../../assets/iconsCalendar/naxt.svg';
 import { ReactComponent as SvgPrev } from '../../assets/iconsCalendar/prev.svg';
+import { useTheme } from '../../hooks/useTheme';
+import cn from 'classnames';
 
 const gridArea = {
 	gridArea: "calendar",
 }
 export const Calendar = ({ doctorsData, setRenderCard }) => {
 	const [value, onChange] = useState(new Date());
+	const { isDark } = useTheme();
+
 
 	const tileContent = ({ date, view }) => {
 		const day = doctorsData.filter(item => {
@@ -31,7 +34,7 @@ export const Calendar = ({ doctorsData, setRenderCard }) => {
 		}))
 	};
 
-	function tileClassName({ view }) {
+	const tileClassName = ({ view }) => {
 		return 'react-calendar__tile--border';
 	}
 
@@ -46,7 +49,9 @@ export const Calendar = ({ doctorsData, setRenderCard }) => {
 				tileContent={tileContent}
 				tileClassName={tileClassName}
 				onClickDay={onClickDay}
+				className={cn({ 'dark': isDark })}
 			/>
+			{console.log(<ReactCalendar />)}
 		</div>
 	)
 }

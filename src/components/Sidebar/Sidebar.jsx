@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react';
 import styles from './Sidebar.module.css';
 import { NavLink } from 'react-router-dom';
 
@@ -10,9 +10,15 @@ import { ReactComponent as SvgInformation } from '../../assets/icons/information
 import { ReactComponent as SvgHelp } from '../../assets/icons/help.svg';
 import { ReactComponent as SvgAppvelox } from '../../assets/icons/appvelox.svg';
 
+import cn from 'classnames';
+import { useTheme } from '../../hooks/useTheme';
+
 export const Sidebar = () => {
+	const { isDark } = useTheme();
 	return (
-		<div className={styles.sidebar}>
+		<div className={cn(styles.sidebar, {
+			[styles.dark]: isDark
+		})}>
 			<nav className={styles.nav}>
 				<div className={styles.logo}>
 					<h3 className={styles.logo__text}>Логотип</h3>
@@ -36,7 +42,9 @@ export const Sidebar = () => {
 						Полезно знать</NavLink>
 				</div>
 				<div style={{ textAlign: 'center' }}>
-					<button className={styles.nav__btn}>
+					<button className={cn(styles.nav__btn, {
+						[styles.dark]: isDark
+					})}>
 						Подать заявку
 					</button>
 				</div>
@@ -48,6 +56,6 @@ export const Sidebar = () => {
 				</div>
 				<SvgAppvelox />
 			</div>
-		</div>
+		</div >
 	);
 }

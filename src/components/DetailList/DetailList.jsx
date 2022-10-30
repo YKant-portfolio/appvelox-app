@@ -2,13 +2,15 @@ import React, { useContext, useState } from 'react';
 import { CreateCard } from '../CreateCard/CreateCard';
 import { Calendar } from '../Calendar/Calendar'
 import styles from './DetailList.module.css';
+import { Context } from '../../context/Context';
 import cn from 'classnames';
-import { Context } from '../../context/context';
+import { useTheme } from '../../hooks/useTheme';
+
 
 export const DetailList = () => {
 	const doctorsData = useContext(Context);
 	const [renderCard, setRenderCard] = useState(doctorsData);
-
+	const { isDark } = useTheme();
 	let btnHidden = renderCard.length > 3 ? styles["hidden"] : null;
 
 	const onShowAllCard = () => {
@@ -19,12 +21,16 @@ export const DetailList = () => {
 	return (
 		<div className={styles.wrap}>
 			<div className={cn(styles.wrap_btn, btnHidden)}>
-				<button className={styles.btn}
+				<button className={cn(styles.btn, {
+					[styles.dark]: isDark
+				})}
 					onClick={onShowAllCard}>
 					Показать все записи
 				</button>
 			</div>
-			<div className={cn(styles.detail_list, btnHidden ? styles.show_scroll : styles.element)}>
+			<div className={cn(styles.detail_list, btnHidden ? styles.show_scroll : styles.element, {
+				[styles.dark]: isDark
+			})}>
 				<CreateCard array={renderCard} />
 			</div>
 			<Calendar doctorsData={doctorsData} setRenderCard={setRenderCard} hidden={btnHidden} />

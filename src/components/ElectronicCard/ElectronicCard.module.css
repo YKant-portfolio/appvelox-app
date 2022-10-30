@@ -15,6 +15,10 @@
 	border-color: var(--cyan);
 }
 
+.card:hover.dark {
+	border-color: var(--white);
+}
+
 .card:nth-child(odd) {
 	margin-right: 16px;
 }
@@ -31,6 +35,10 @@
 .card:hover .icon {
 	background-color: var(--cyan);
 	transition: all 0.3s;
+}
+
+.card:hover .icon.dark {
+	background-color: var(--bg-dark);
 }
 
 .descr {
@@ -55,6 +63,10 @@
 
 .card:hover .divider {
 	background-color: var(--cyan);
+}
+
+.card:hover .divider.dark {
+	background-color: var(--bg-dark);
 }
 
 .list {

@@ -1,18 +1,25 @@
-import React from 'react'
 import styles from './ElectronicCard.module.css';
+import cn from 'classnames';
+import { useTheme } from '../../hooks/useTheme';
 
 export const ElectronicCard = ({ title, text, children }) => {
-
+	const { isDark } = useTheme();
 	return (
-		<div className={styles.card}>
-			<div className={styles.icon}>
+		<div className={cn(styles.card, {
+			[styles.dark]: isDark
+		})}>
+			<div className={cn(styles.icon, {
+				[styles.dark]: isDark
+			})}>
 				{children[0]}
 			</div>
 			<div className={styles.descr}>
 				<h3 className={styles.title}>
 					{title}
 				</h3>
-				<div className={styles.divider} />
+				<div className={cn(styles.divider, {
+					[styles.dark]: isDark
+				})} />
 				<div className={styles.text}>
 					{text}
 				</div>

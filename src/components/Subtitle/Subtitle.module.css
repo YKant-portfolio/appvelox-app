@@ -10,6 +10,10 @@
 	margin-top: 0;
 }
 
+.subtitle.dark {
+	color: var(--white);
+}
+
 svg {
 	margin-right: 14px;
 }
